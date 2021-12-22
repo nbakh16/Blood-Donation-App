@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/home"
+        android:title="Home"/>
+
+    <item
+        android:id="@+id/sentEmail"
+        android:title="Donor email"/>
+
+    <item android:title="Blood Groups">
+        <menu>
+            <group android:checkableBehavior="single">
+                <item
+                    android:id="@+id/apos"
+                    android:title="A+"/>
+                <item
+                    android:id="@+id/aneg"
+                    android:title="A-"/>
+                <item
+                    android:id="@+id/bpos"
+                    android:title="B+"/>
+                <item
+                    android:id="@+id/bneg"
+                    android:title="B-"/>
+                <item
+                    android:id="@+id/abpos"
+                    android:title="AB+"/>
+                <item
+                    android:id="@+id/abneg"
+                    android:title="AB-"/>
+                <item
+                    android:id="@+id/opos"
+                    android:title="O+"/>
+                <item
+                    android:id="@+id/oneg"
+                    android:title="O-"/>
+            </group>
+        </menu>
+    </item>
+
+    <item
+        android:id="@+id/logout"
+        android:title="Logout"/>
+
+    <item
+        android:id="@+id/about"
+        android:title="About app"/>
+
+</menu>
