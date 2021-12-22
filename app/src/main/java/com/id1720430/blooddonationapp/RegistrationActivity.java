@@ -35,12 +35,16 @@ import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 
+import de.hdodenhof.circleimageview.CircleImageView;
+
 public class RegistrationActivity extends AppCompatActivity {
 
     private TextInputEditText registerFullName, registerDOB, registerNationalID, registerHomeAddress
             , registerPostalCode, registerPhoneNumber, registerEmail, registerPassword;
 
     private Spinner genderSpinner, bloodGroupSpinner;
+
+    private CircleImageView profile_image;
 
     private Button signupButton;
 
@@ -51,12 +55,14 @@ public class RegistrationActivity extends AppCompatActivity {
     private FirebaseAuth mAuth;
     private DatabaseReference userDatabaseRef;
 
+    private Uri resultUri;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_registration);
 
+        profile_image = findViewById(R.id.profile_image);
         registerFullName = findViewById(R.id.registerFullName);
         registerDOB = findViewById(R.id.registerDOB);
         registerNationalID = findViewById(R.id.registerNationalID);
@@ -79,6 +85,15 @@ public class RegistrationActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(RegistrationActivity.this, LoginActivity.class);
                 startActivity(intent);
+            }
+        });
+
+        profile_image.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(Intent.ACTION_PICK);
+                intent.setType("image/*");
+                startActivityForResult(intent, 1);
             }
         });
 
@@ -183,10 +198,64 @@ public class RegistrationActivity extends AppCompatActivity {
                                     }
                                 });
 
-                                Intent intent = new Intent(RegistrationActivity.this, MainActivity.class);
-                                startActivity(intent);
-                                finish();
-                                loader.dismiss();
+                                if (resultUri !=null){
+                                    final StorageReference filePath = FirebaseStorage.getInstance().getReference().child("profile images").child(currentUserID);
+                                    Bitmap bitmap = null;
+
+                                    try {
+                                        bitmap = MediaStore.Images.Media.getBitmap(getApplication().getContentResolver(), resultUri);
+                                    }catch (IOException e){
+                                        e.printStackTrace();
+                                    }
+                                    ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
+                                    bitmap.compress(Bitmap.CompressFormat.JPEG, 20, byteArrayOutputStream);
+                                    byte[] data  = byteArrayOutputStream.toByteArray();
+                                    UploadTask uploadTask = filePath.putBytes(data);
+
+                                    uploadTask.addOnFailureListener(new OnFailureListener() {
+                                        @Override
+                                        public void onFailure(@NonNull Exception e) {
+                                            Toast.makeText(RegistrationActivity.this, "Image Upload Failed", Toast.LENGTH_SHORT).show();
+                                        }
+                                    });
+
+                                    uploadTask.addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
+                                        @Override
+                                        public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
+
+                                            if (taskSnapshot.getMetadata() !=null && taskSnapshot.getMetadata().getReference() !=null){
+                                                Task<Uri> result = taskSnapshot.getStorage().getDownloadUrl();
+                                                result.addOnSuccessListener(new OnSuccessListener<Uri>() {
+                                                    @Override
+                                                    public void onSuccess(Uri uri) {
+                                                        String imageUrl = uri.toString();
+                                                        Map newImageMap = new HashMap();
+                                                        newImageMap.put("profilepictureurl", imageUrl);
+
+                                                        userDatabaseRef.updateChildren(newImageMap).addOnCompleteListener(new OnCompleteListener() {
+                                                            @Override
+                                                            public void onComplete(@NonNull Task task) {
+                                                                if (task.isSuccessful()){
+                                                                    Toast.makeText(RegistrationActivity.this, "Image url added to database successfully", Toast.LENGTH_SHORT).show();
+                                                                }else {
+                                                                    Toast.makeText(RegistrationActivity.this, task.getException().toString(), Toast.LENGTH_SHORT).show();
+                                                                }
+                                                            }
+                                                        });
+
+                                                        finish();
+                                                    }
+                                                });
+                                            }
+
+                                        }
+                                    });
+
+                                    Intent intent = new Intent(RegistrationActivity.this, MainActivity.class);
+                                    startActivity(intent);
+                                    finish();
+                                    loader.dismiss();
+                                }
                             }
                         }
                     });
@@ -194,6 +263,15 @@ public class RegistrationActivity extends AppCompatActivity {
                 }
             }
         });
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (requestCode ==1 && resultCode == RESULT_OK && data !=null){
+            resultUri = data.getData();
+            profile_image.setImageURI(resultUri);
+        }
     }
 
 }
