@@ -9,12 +9,16 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name="com.nbakh.blooddonation.CategorySelectedActivity" />
-        <activity android:name="com.nbakh.blooddonation.ProfileActivity" />
-        <activity android:name="com.nbakh.blooddonation.MainActivity" />
-        <activity android:name="com.nbakh.blooddonation.RegistrationActivity" />
-        <activity android:name="com.nbakh.blooddonation.LoginActivity" />
-        <activity android:name="com.nbakh.blooddonation.SplashScreenActivity"
+        <activity
+            android:name=".AboutActivity"
+            android:exported="true" />
+        <activity android:name=".CategorySelectedActivity" />
+        <activity android:name=".ProfileActivity" />
+        <activity android:name=".MainActivity" />
+        <activity android:name=".RegistrationActivity" />
+        <activity android:name=".LoginActivity" />
+        <activity
+            android:name=".SplashScreenActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

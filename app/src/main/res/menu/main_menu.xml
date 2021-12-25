@@ -12,33 +12,32 @@
         <menu>
             <group android:checkableBehavior="single">
                 <item
-                    android:id="@+id/aplus"
+                    android:id="@+id/Apos"
                     android:title="A+"/>
                 <item
-                    android:id="@+id/aminus"
+                    android:id="@+id/Aneg"
                     android:title="A-"/>
                 <item
-                    android:id="@+id/bplus"
+                    android:id="@+id/Bpos"
                     android:title="B+"/>
                 <item
-                    android:id="@+id/bminus"
+                    android:id="@+id/Bneg"
                     android:title="B-"/>
                 <item
-                    android:id="@+id/abplus"
+                    android:id="@+id/ABpos"
                     android:title="AB+"/>
                 <item
-                    android:id="@+id/abminus"
+                    android:id="@+id/ABneg"
                     android:title="AB-"/>
                 <item
-                    android:id="@+id/oplus"
+                    android:id="@+id/Opos"
                     android:title="O+"/>
                 <item
-                    android:id="@+id/ominus"
+                    android:id="@+id/Oneg"
                     android:title="O-"/>
             </group>
         </menu>
     </item>
-
 
     <item
         android:id="@+id/about"

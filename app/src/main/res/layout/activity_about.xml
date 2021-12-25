@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="match_parent"
+    android:paddingTop="50dp"
+    tools:context=".AboutActivity">
+
+    <TextView
+        android:text="About the app"
+        android:textColor="@color/black"
+        android:textSize="25dp"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:layout_marginBottom="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:src="@drawable/blood_donor_logo"
+        android:layout_gravity="center"
+        android:layout_margin="10dp"
+        android:layout_width="90dp"
+        android:layout_height="90dp"/>
+
+    <TextView
+        android:text="Blood Donor"
+        android:textColor="@color/black"
+        android:textSize="30dp"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:layout_marginBottom="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <TextView
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:gravity="right"
+        android:layout_gravity="center"
+        android:text="beta v0.12"
+        android:textSize="15dp" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="30dp"
+        android:gravity="center"
+        android:text="This app is created to help people to reach blood donors easily."
+        android:textColor="@color/black"
+        android:textSize="16dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Developed by"
+        android:paddingLeft="20dp"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:textStyle="bold"
+            android:textAllCaps="true"
+            android:text="Nabil Akhunjee"
+            android:textColor="@color/black"
+            android:gravity="right"
+            android:layout_width="170dp"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:textAllCaps="true"
+            android:text="id-1720430"
+            android:textColor="@color/black"
+            android:gravity="left"
+            android:paddingLeft="20dp"
+            android:layout_width="180dp"
+            android:layout_height="wrap_content"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:textStyle="bold"
+            android:textAllCaps="true"
+            android:text="Ashraful Islam Alif"
+            android:textColor="@color/black"
+            android:gravity="right"
+            android:layout_width="170dp"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:textAllCaps="true"
+            android:text="id-1822163"
+            android:textColor="@color/black"
+            android:gravity="left"
+            android:paddingLeft="20dp"
+            android:layout_width="180dp"
+            android:layout_height="wrap_content"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:textStyle="bold"
+            android:textAllCaps="true"
+            android:text="Sabrina Yasmin"
+            android:textColor="@color/black"
+            android:gravity="right"
+            android:layout_width="170dp"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:id="@+id/profiledob"
+            android:textAllCaps="true"
+            android:text="id-1821172"
+            android:textColor="@color/black"
+            android:gravity="left"
+            android:paddingLeft="20dp"
+            android:layout_width="180dp"
+            android:layout_height="wrap_content"/>
+
+    </LinearLayout>
+    
+
+    <Button
+        android:id="@+id/homeButton"
+        android:layout_marginRight="80dp"
+        android:layout_marginLeft="80dp"
+        android:layout_marginTop="20dp"
+        android:textSize="20sp"
+        android:gravity="center"
+        android:textColor="@color/white"
+        android:text="Home Page"
+        android:textStyle="bold"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+
+</LinearLayout>
