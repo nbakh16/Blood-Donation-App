@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.id1720430.blooddonationapp">
+    package="com.nbakh.blooddonation">
 
     <application
         android:allowBackup="true"
@@ -8,21 +8,13 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.BloodDonationApp">
-        <activity
-            android:name=".MainActivity"
-            android:exported="true" />
-        <activity
-            android:name=".RegistrationActivity"
-            android:exported="true" />
-        <activity
-            android:name=".SelectRegistrationActivity"
-            android:exported="true" />
-        <activity
-            android:name=".LoginActivity"
-            android:exported="true" />
-        <activity
-            android:name=".SplashScreenActivity"
+        android:theme="@style/AppTheme">
+        <activity android:name="com.nbakh.blooddonation.CategorySelectedActivity" />
+        <activity android:name="com.nbakh.blooddonation.ProfileActivity" />
+        <activity android:name="com.nbakh.blooddonation.MainActivity" />
+        <activity android:name="com.nbakh.blooddonation.RegistrationActivity" />
+        <activity android:name="com.nbakh.blooddonation.LoginActivity" />
+        <activity android:name="com.nbakh.blooddonation.SplashScreenActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

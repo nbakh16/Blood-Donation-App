@@ -4,52 +4,46 @@
     <item
         android:id="@+id/home"
         android:title="Home"/>
-
     <item
-        android:id="@+id/sentEmail"
-        android:title="Donor email"/>
+        android:id="@+id/profile"
+        android:title="Profile"/>
 
-    <item android:title="Blood Groups">
+    <item android:title="Search for Blood">
         <menu>
             <group android:checkableBehavior="single">
                 <item
-                    android:id="@+id/apos"
+                    android:id="@+id/aplus"
                     android:title="A+"/>
                 <item
-                    android:id="@+id/aneg"
+                    android:id="@+id/aminus"
                     android:title="A-"/>
                 <item
-                    android:id="@+id/bpos"
+                    android:id="@+id/bplus"
                     android:title="B+"/>
                 <item
-                    android:id="@+id/bneg"
+                    android:id="@+id/bminus"
                     android:title="B-"/>
                 <item
-                    android:id="@+id/abpos"
+                    android:id="@+id/abplus"
                     android:title="AB+"/>
                 <item
-                    android:id="@+id/abneg"
+                    android:id="@+id/abminus"
                     android:title="AB-"/>
                 <item
-                    android:id="@+id/opos"
+                    android:id="@+id/oplus"
                     android:title="O+"/>
                 <item
-                    android:id="@+id/oneg"
+                    android:id="@+id/ominus"
                     android:title="O-"/>
             </group>
         </menu>
     </item>
 
-    <item
-        android:id="@+id/profile"
-        android:title="Profile"/>
 
     <item
         android:id="@+id/about"
-        android:title="About app"/>
-
+        android:title="About App"/>
     <item
         android:id="@+id/logout"
-        android:title="Logout"/>
-
+        android:title="Log Out"/>
 </menu>

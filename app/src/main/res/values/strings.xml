@@ -1,8 +1,14 @@
 <resources>
-    <string name="app_name">BloodDonationApp</string>
+    <string name="app_name">Blood Donor</string>
 
-    <string name="nav_drawer_open">Open navigation drawer</string>
-    <string name="nav_drawer_close">Close navigation drawer</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string-array name="gender">
+        <item>Select gender</item>
+        <item>Male</item>
+        <item>Female</item>
+    </string-array>
 
     <string-array name="bloodgroups">
         <item>Select blood group</item>
@@ -14,12 +20,5 @@
         <item>AB-</item>
         <item>O+</item>
         <item>O-</item>
-    </string-array>
-
-    <string-array name="gender">
-        <item>Select gender</item>
-        <item>Male</item>
-        <item>Female</item>
-        <item>Other</item>
     </string-array>
 </resources>
