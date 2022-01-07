@@ -47,7 +47,7 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="30dp"
+        android:layout_margin="35dp"
         android:gravity="center"
         android:text="This app is created to help people to reach blood donors easily."
         android:textColor="@color/black"
@@ -59,82 +59,36 @@
         android:text="Developed by"
         android:paddingLeft="20dp"/>
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-
         <TextView
             android:textStyle="bold"
             android:textAllCaps="true"
             android:text="Nabil Akhunjee"
             android:textColor="@color/black"
-            android:gravity="right"
-            android:layout_width="170dp"
-            android:layout_height="wrap_content"/>
-
-        <TextView
-            android:textAllCaps="true"
-            android:text="id-1720430"
-            android:textColor="@color/black"
+            android:textSize="20dp"
             android:gravity="left"
-            android:paddingLeft="20dp"
-            android:layout_width="180dp"
+            android:paddingLeft="50dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
 
-    </LinearLayout>
-
-    <LinearLayout
+    <TextView
+        android:text="Independent University, Bangladesh"
+        android:textColor="@color/black"
+        android:textSize="16dp"
+        android:gravity="left"
+        android:paddingLeft="50dp"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:layout_height="wrap_content"/>
 
-        <TextView
-            android:textStyle="bold"
-            android:textAllCaps="true"
-            android:text="Ashraful Islam Alif"
-            android:textColor="@color/black"
-            android:gravity="right"
-            android:layout_width="170dp"
-            android:layout_height="wrap_content"/>
-
-        <TextView
-            android:textAllCaps="true"
-            android:text="id-1822163"
-            android:textColor="@color/black"
-            android:gravity="left"
-            android:paddingLeft="20dp"
-            android:layout_width="180dp"
-            android:layout_height="wrap_content"/>
-
-    </LinearLayout>
-
-    <LinearLayout
+    <TextView
+        android:text="ID-1720430"
+        android:textColor="@color/black"
+        android:textSize="16dp"
+        android:gravity="left"
+        android:paddingLeft="50dp"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:layout_height="wrap_content"/>
 
-        <TextView
-            android:textStyle="bold"
-            android:textAllCaps="true"
-            android:text="Sabrina Yasmin"
-            android:textColor="@color/black"
-            android:gravity="right"
-            android:layout_width="170dp"
-            android:layout_height="wrap_content"/>
 
-        <TextView
-            android:id="@+id/profiledob"
-            android:textAllCaps="true"
-            android:text="id-1821172"
-            android:textColor="@color/black"
-            android:gravity="left"
-            android:paddingLeft="20dp"
-            android:layout_width="180dp"
-            android:layout_height="wrap_content"/>
-
-    </LinearLayout>
-    
 
     <Button
         android:id="@+id/homeButton"
